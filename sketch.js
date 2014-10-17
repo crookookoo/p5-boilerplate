@@ -15,25 +15,28 @@ window.onload = function() {
   var gui = new dat.GUI();
 
  // var f1=gui.addFolder('Controls');
-  gui.add(window, 'x', 10, 1000);
-  gui.add(window, 'y', 10, 1000);
+  gui.add(window, 'x', 0, 100);
+  gui.add(window, 'y', 0, 100);
   gui.add(window, 'rad', 10, 1000);
 
 };
 
-var x,y, rad = 50;
-
 function setup() {
 
-	createCanvas(windowWidth, windowHeight);
-	x=windowWidth/2;
-	y=windowHeight/2;
+  createCanvas(windowWidth, windowHeight);
+
+  x=50;
+  y=50;
+  rad = 50;
 
 }
 
 function draw(){
- 	 background(0);
-     ellipse(x-orienty*10,y-orientx*10,rad,rad);
+   background(0);
+   
+   xpos=windowWidth*x/100;
+   ypos=windowHeight*y/100;
+
+   ellipse(xpos-orienty*10,ypos-orientx*10,rad,rad);
 
 }
-
