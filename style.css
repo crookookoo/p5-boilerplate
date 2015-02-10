@@ -5,12 +5,3 @@ html,body {
 			padding: 0;
 			line-height: 0;
 			}
-
-
-canvas { 
-		display: block; 
-		outline: 0px; 
-		margin-bottom: 1.5em; 
-			margin: 0;
-			padding: 0;
-	}

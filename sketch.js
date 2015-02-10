@@ -1,27 +1,35 @@
-var orientx = 0,
-    orienty = 0,
-    orient = 0;
+// P5.js experiment bolerplate
+// Eugene Krivoruchko
 
-// Gyro adjustments according to device orientation
-function onDeviceOrientationChange(a) {usefulOrientation(a.alpha, a.beta, a.gamma)}
-function usefulOrientation(a, b, e) {
-    180 === window.orientation ? (b = -b, e = -e) : 90 === window.orientation ? (e = b, b = -e) : -90 === window.orientation && (b = e, e = -b);
-    orientx = b;
-    orienty = e;
-    orient = window.orientation}
-window.addEventListener("deviceorientation", onDeviceOrientationChange, !1);
+// - - - - - - - - - - -
 
-window.onload = function() {
-  var gui = new dat.GUI();
+// STATS
+     
+    var stats = new Stats();
+    stats.setMode( 0 );
 
- // var f1=gui.addFolder('Controls');
-  gui.add(window, 'x', 10, 1000);
-  gui.add(window, 'y', 10, 1000);
-  gui.add(window, 'rad', 10, 1000);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    stats.domElement.style.display = 'none';
+    
+    document.body.appendChild( stats.domElement );
 
-};
+// - - - - - - - - - - -
 
-var x,y, rad = 50;
+// DAT.GUI
+
+// window.onload = function() {
+//   var gui = new dat.GUI();
+
+//   gui.add(window, 'rad', 10, 1000);
+ 
+// };
+
+// - - - - - - - - - - -
+
+
+var x,y,rad = 50;
 
 function setup() {
 
@@ -32,8 +40,11 @@ function setup() {
 }
 
 function draw(){
- 	 background(0);
-     ellipse(x-orienty*10,y-orientx*10,rad,rad);
+  stats.begin();
 
+ 	 background(0);
+     ellipse(x,y,rad,rad);
+
+  stats.end();
 }
 

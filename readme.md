@@ -1,3 +1,3 @@
 #P5.js web experiment boilerplate
 
-Includes orientation-sensitive gyroscope and dat.gui component.
+A fullscreen sketch with dat.gui and stats.js plugged in.
