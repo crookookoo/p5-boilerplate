@@ -1,4 +1,4 @@
-// P5.js experiment bolerplate
+// P5.js experiment boilerplate
 // Eugene Krivoruchko
 
 // - - - - - - - - - - -
