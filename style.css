@@ -5,3 +5,9 @@ html,body {
 			padding: 0;
 			line-height: 0;
 			}
+#stats {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: block;
+}
